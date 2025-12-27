@@ -14,7 +14,7 @@
 
 ---
 
-## 📌 0️⃣ Introduzione
+
 Attraverso questa guida è possibile realizzare una **VPN domestica** per poter connettersi alla propria rete di casa (oppure di lavoro) anche da remoto. Per farlo utilizzeremo i seguenti servizi:
 - Un servizio di DDNS (se non abbiamo un IP statico)
 - Un server Linux (utilizzerò Debian)
@@ -39,7 +39,7 @@ L'obiettivo è quello di spiegare alcuni passaggi che sono stati saltati o affro
 ## 📚 Sommario
 | Capitolo | Titolo | Link |
 |--------|--------|------|
-|0️⃣| **Introduzione** | Sei qui 👇 |
+|0️⃣| Introduzione | Link |
 |1️⃣| Cosa faremo e cosa utilizzeremo | Da fare |
 |2️⃣| Configurazione servizio DDNS | Da fare |
 |3️⃣| Configurazione Container Linux Server | Da fare |
@@ -50,46 +50,6 @@ L'obiettivo è quello di spiegare alcuni passaggi che sono stati saltati o affro
 |8️⃣| Attivare/Disattivare la VPN da remoto con Bot Telegram | Da fare |
 |9️⃣| IMPORTANTE: Messa in sicurezza |Da fare|
 |🔟| Considerazioni su affidabilità, prestazioni e sicurezza | Da fare |
-
----
-
-# 📘 Concetti di base
-
-## 🧠 Diamo prima alcune definizioni
-
-### 🔹 Indirizzo IP – Internet Protocol
-È un numero che identifica in modo univoco un nodo connesso a una rete. Esistono varie classi e tipologie, a noi interessa distinguere tra statico, dinamico, pubblico e CG-NAT. Queste tipologie di IP vengono assegnate dal nostro ISP (Internet Service Provider).
-
-- **IP statico:** l'IP è sempre lo stesso e non cambia mai  
-- **IP dinamico:** l'IP varia nel corso del tempo. Il cambio può avvenire in tempi e modi diversi (a discrezione dell'ISP oppure quando riavviamo il router)  
-- **IP pubblico:** è l'IP con il quale siamo "conosciuti" in rete.  
-- **IP CG-NAT – Carrier Grade NAT:**  
-  a volte gli ISP non hanno abbastanza IP pubblici da fornire ai loro clienti. Per tanto forniscono lo stesso IP pubblico a più clienti: le connessioni private restano chiuse (non puoi accedere alla rete di un altro utente che ha il tuo stesso IP), ma la tua connessione passa attraverso una rete di livello superiore.  
-  Un po' come se a casa tua avessi un ripetitore wifi: i dispositivi si collegano al ripetitore che a sua volta si collega al router principale.
-
----
-
-## 🔁 NAT – Network Address Translation
-È un servizio che permette a più dispositivi di condividere un unico indirizzo IP.
-
-Pensiamo alla rete domestica:
-- i router solitamente creano una rete domestica sull'indirizzo `192.168.0.1` oppure `192.168.1.1`
-- tutti i dispositivi di casa avranno indirizzi a partire da `192.168.1.2` fino a `192.168.1.254`
-- ma su Internet usciranno tutti con l'IP fornito dall'ISP
-
-➡️ Il router si occupa quindi di tradurre l'indirizzo domestico (es. `192.168.1.210`) in quello della rete pubblica.
-
----
-
-## 🔐 VPN – Virtual Private Network
-Una VPN è un tunnel crittografato tra un utente e un server privato. Nel caso d'uso principale, quando un utente si connette a una VPN fa passare tutto il suo traffico attraverso questo tunnel.
-
-```mermaid
-flowchart LR
-A[Ciro è connesso a internet con IP Pubblico XX.XX.XX.XX] --> B((TUNNEL VPN))
-B --> C[Tutto il traffico di Ciro è indirizzato alla VPN. Ciro è su internet con indirizzo YY.YY.YY.YY]
-```
-In questo modo, l'utente sarà connesso a Internet, ma il suo traffico passa prima nel tunnel e dopo esce sulla rete.
 
 ---
 
