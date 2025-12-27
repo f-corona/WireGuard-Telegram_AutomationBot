@@ -86,8 +86,8 @@ Una VPN è un tunnel crittografato tra un utente e un server privato. Nel caso d
 
 ```mermaid
 flowchart LR
-A[UTENTE REMOTO] --> B((TUNNEL VPN))
-B --> C[RETE DI CASA]
+A[Ciro è connesso a internet con IP Pubblico XX.XX.XX.XX] --> B((TUNNEL VPN))
+B --> C[Tutto il traffico di Ciro è indirizzato alla VPN. Ciro è su internet con indirizzo YY.YY.YY.YY]
 ```
 In questo modo, l'utente sarà connesso a Internet, ma il suo traffico passa prima nel tunnel e dopo esce sulla rete.
 
